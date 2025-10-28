@@ -9,6 +9,7 @@ bot.on("message", function (msg) {
     console.log(msg);
 
     bot.sendMessage(chatID, `--> ${text}`);
+    bot.sendDice(chatID);
 })
 
 console.log("bot ishga tushdi...")
