@@ -6,9 +6,10 @@ const bot = new TelegramBot(TOKEN, {polling: true});
 bot.on("message", function (msg) {
     const chatID = msg.chat.id;
     const text = msg.text;
+    const firstName = msg.chat.first_name;
     console.log(msg);
 
-    bot.sendMessage(chatID, `--> ${text}`);
+    bot.sendMessage(chatID, ` Xush kelibsiz, ${firstName}`);
     bot.sendDice(chatID);
 })
 
