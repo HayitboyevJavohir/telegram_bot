@@ -16,12 +16,19 @@ bot.on("message", function (msg) {
                     [{ text: "Boshlash" }],
                     [{ text: "Menu" }, {text: "Til"}]
                 ],
+                resize_keyboard: true,
             },
         });
     } else if (text == "/help") {
         bot.sendMessage(chatID, ` Sizga qanday yordam kerak, ${firstName}? `);
     } else if (text == "/sozlamalar") {
         bot.sendMessage(chatID, `Bu sozlamalar, ${firstName}`);
+    } else if (text == "Boshlash") {
+        bot.sendMessage(chatID, `Boshlanyapti...`);
+    } else if (text == "Menu") {
+        bot.sendMessage(chatID, `Menyuuuuuu...`);
+    } else if (text == "Til") {
+        bot.sendMessage(chatID, ` Tilni tanlang... `);
     }
 });
 
