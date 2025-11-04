@@ -9,8 +9,20 @@ bot.on("message", function (msg) {
     const firstName = msg.chat.first_name;
     console.log(msg);
 
-    bot.sendMessage(chatID, ` Xush kelibsiz, ${firstName}`);
-    bot.sendDice(chatID);
-})
+    if (text == "/start") {
+        bot.sendMessage(chatID, ` Xush kelibsiz, ${firstName}`, {
+            reply_markup: {
+                keyboard: [
+                    [{ text: "Boshlash" }],
+                    [{ text: "Menu" }, {text: "Til"}]
+                ],
+            },
+        });
+    } else if (text == "/help") {
+        bot.sendMessage(chatID, ` Sizga qanday yordam kerak, ${firstName}? `);
+    } else if (text == "/sozlamalar") {
+        bot.sendMessage(chatID, `Bu sozlamalar, ${firstName}`);
+    }
+});
 
 console.log("bot ishga tushdi...")
