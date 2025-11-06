@@ -27,6 +27,15 @@ bot.on("message", async function (msg) {
       bot.deleteMessage(chatID, xabar.message_id);
       bot.sendPhoto(chatID, "./images/bugatti.jpg", {
         caption: `Automobiles Ettore Bugatti was a French manufacturer of high-performance automobiles. The company was founded in 1909 in the then-German city of Molsheim`,
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {text: "Rasmlari", callback_data: "photos"},
+                    { text: "Ma`lumot", callback_data: "info" },
+                ],
+                [{text: "Sotib olish", callback_data: "buy"}],
+            ],
+        },
       });
 
       console.log("2 sekundga kechiktirilsin");
